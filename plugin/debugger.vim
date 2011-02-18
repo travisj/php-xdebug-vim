@@ -107,6 +107,9 @@
 " Load debugger.py either from the runtime directory (usually
 " /usr/local/share/vim/vim71/plugin/ if you're running Vim 7.1) or from the
 " home vim directory (usually ~/.vim/plugin/).
+
+let s:scriptfile=expand("<sfile>")
+
 if filereadable($VIMRUNTIME."/plugin/debugger.py")
   pyfile $VIMRUNTIME/plugin/debugger.py
 elseif filereadable($VIM."/plugin/debugger.py")
