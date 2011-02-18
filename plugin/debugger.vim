@@ -112,7 +112,8 @@ if filereadable($VIMRUNTIME."/plugin/debugger.py")
 elseif filereadable($VIM."/plugin/debugger.py")
   pyfile $VIM/plugin/debugger.py
 else
-  call confirm('debugger.vim: Unable to find debugger.py. Place it in either your home vim directory or in the Vim runtime directory.', 'OK')
+	execute "pyfile ".fnameescape(fnamemodify(s:scriptfile, ":h")."/debugger.py")
+  "call confirm('debugger.vim: Unable to find debugger.py. Place it in either your home vim directory or in the Vim runtime directory.', 'OK')
 endif
 
 map <F1> :python debugger_resize()<cr>
